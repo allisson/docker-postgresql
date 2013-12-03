@@ -10,6 +10,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV INITRD No
 
 # install packages
+RUN apt-get update
 RUN apt-get install -y openssh-server postgresql supervisor
 
 # make /var/run/sshd
