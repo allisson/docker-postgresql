@@ -1,6 +1,6 @@
 # Postgresql
 #
-# VERSION               0.2
+# VERSION               0.3
 
 FROM allisson/docker-ubuntu:latest
 MAINTAINER Allisson Azevedo <allisson@gmail.com>
@@ -35,6 +35,9 @@ RUN rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 # expose postgresql port
 EXPOSE 22 5432
+
+# volumes
+VOLUME ["/var/lib/postgresql/9.1/main"]
 
 # start supervisor
 CMD ["/usr/bin/supervisord"]
